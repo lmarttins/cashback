@@ -1,12 +1,16 @@
 <?php
 
-namespace Cashback\Shopping\Jobs;
+namespace Cashback\Application\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 
+/**
+ * Class Job
+ * @package Cashback\Application\Jobs
+ */
 abstract class Job implements ShouldQueue
 {
     /*

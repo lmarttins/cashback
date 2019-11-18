@@ -1,9 +1,13 @@
 <?php
 
-namespace Cashback\Shopping\Providers;
+namespace Cashback\Domains\Cashback\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+/**
+ * Class DomainServiceProvider
+ * @package Cashback\Domains\Cashback\Providers
+ */
 class DomainServiceProvider extends ServiceProvider
 {
     /**

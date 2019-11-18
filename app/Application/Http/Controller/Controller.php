@@ -1,6 +1,6 @@
 <?php
 
-namespace Cashback\Shopping\Http\Controllers;
+namespace Cashback\Application\Http\Controller;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 

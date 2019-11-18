@@ -1,6 +1,6 @@
 <?php
 
-namespace Cashback\Shopping\Exceptions;
+namespace Cashback\Application\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
