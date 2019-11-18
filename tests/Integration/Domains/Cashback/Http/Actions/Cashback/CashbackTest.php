@@ -6,11 +6,13 @@ use TestCase;
 
 class CashbackTest extends TestCase
 {
-    public function testBasicExample()
+    /**
+     * @test
+     */
+    public function shouldResponseError()
     {
-        $this->json('GET', '/api/v1/cashback')
-            ->seeJson([
-               'message' => 'cashback'
-            ]);
+        $response = $this->call('GET', '/api/v1/cashback');
+
+        $this->assertEquals(500, $response->status());
     }
 }

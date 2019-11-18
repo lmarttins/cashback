@@ -5,13 +5,14 @@ namespace Cashback\Domains\Cashback\Services;
 use Cashback\Domains\Account\Repositories\AccountRepository;
 use Cashback\Domains\Cashback\Commands\TransferToBankAccountCommand;
 use Cashback\Domains\Cashback\Exceptions\InvalidAccumulatedBalanceException;
+use Cashback\Domains\Cashback\Services\Contracts\CashOutService as CashOutServiceContract;
 use Illuminate\Contracts\Bus\QueueingDispatcher;
 
 /**
  * Class CashOutService
  * @package Cashback\Domains\Cashback\Services
  */
-class CashOutService
+class CashOutService implements CashOutServiceContract
 {
     const WITHDRAW_FROM = 20.00;
 
@@ -47,7 +48,9 @@ class CashOutService
         $account = $this->accountRepository->getAccount();
 
         if ($account->getBalance() < self::WITHDRAW_FROM) {
-            throw new InvalidAccumulatedBalanceException();
+            throw new InvalidAccumulatedBalanceException(
+                'O saldo acumulado não é o suficiente.'
+            );
         }
 
         $command = new TransferToBankAccountCommand(
