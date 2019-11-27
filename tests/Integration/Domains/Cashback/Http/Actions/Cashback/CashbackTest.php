@@ -4,6 +4,11 @@ namespace Tests\Integration\Domains\Cashback\Http\Actions\Cashback;
 
 use TestCase;
 
+/**
+ * Class CashbackTest
+ *
+ * @package Tests\Integration\Domains\Cashback\Http\Actions\Cashback
+ */
 class CashbackTest extends TestCase
 {
     /**
@@ -13,6 +18,7 @@ class CashbackTest extends TestCase
     {
         $response = $this->call('GET', '/api/v1/cashback');
 
-        $this->assertEquals(500, $response->status());
+        $this->assertEquals(200, $response->status());
+        $this->assertEquals(['message' => 'success'], (array) $response->getData());
     }
 }

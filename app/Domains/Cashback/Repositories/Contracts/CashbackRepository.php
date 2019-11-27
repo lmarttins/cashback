@@ -4,6 +4,7 @@ namespace Cashback\Domains\Cashback\Repositories\Contracts;
 
 /**
  * Interface CashbackRepository
+ *
  * @package Cashback\Domains\Cashback\Repositories\Contracts
  */
 interface CashbackRepository
