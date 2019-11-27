@@ -7,6 +7,7 @@ use Cashback\Domains\Cashback\Repositories\Contracts\CashbackRepository;
 
 /**
  * Class CashbackService
+ *
  * @package Cashback\Domains\Cashback\Services
  */
 class CashbackService
@@ -18,6 +19,7 @@ class CashbackService
 
     /**
      * CashbackService constructor.
+     *
      * @param CashbackRepository $cashbackRepository
      */
     public function __construct(CashbackRepository $cashbackRepository)
