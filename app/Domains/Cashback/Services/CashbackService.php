@@ -37,7 +37,7 @@ class CashbackService
         $from = $this->cashbackRepository->from();
 
         if ($amountPaid < $from) {
-           throw new InvalidPaidAmountException();
+            throw new InvalidPaidAmountException();
         }
 
         return $this->cashbackRepository->getCashbackValue();
