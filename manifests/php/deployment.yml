@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: php
+  labels:
+    tier: backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: php
+      tier: backend
+  template:
+    metadata:
+      labels:
+        app: php
+        tier: backend
+    spec:
+      containers:
+        - name: php
+          image: $DOCKER_USERNAME/php:$SEMAPHORE_WORKFLOW_ID
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: php-lb
+spec:
+  selector:
+    app: php
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 4567
