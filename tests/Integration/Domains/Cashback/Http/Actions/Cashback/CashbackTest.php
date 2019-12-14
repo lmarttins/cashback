@@ -14,7 +14,7 @@ class CashbackTest extends TestCase
     /**
      * @test
      */
-    public function shouldResponseError()
+    public function shouldResponseSuccess()
     {
         $response = $this->call('GET', '/api/v1/cashback');
 
