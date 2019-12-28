@@ -5,11 +5,11 @@ namespace Cashback\Domains\Cashback\Decorators;
 use Cashback\Domains\Cashback\Decorators\Contracts\CashBack;
 
 /**
- * Class CashBackDefault
+ * Class DefaultCashBack
  *
  * @package Cashback\Domains\Cashback\Decorators
  */
-class CashBackDefault implements CashBack
+class DefaultCashBack implements CashBack
 {
     const DISCOUNT = 10;
 

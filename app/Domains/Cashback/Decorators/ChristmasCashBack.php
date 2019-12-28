@@ -5,13 +5,13 @@ namespace Cashback\Domains\Cashback\Decorators;
 use Cashback\Domains\Cashback\Decorators\Contracts\CashBack;
 
 /**
- * Class CashBackChristmasPromotion
+ * Class ChristmasCashBack
  *
  * @package Cashback\Domains\Cashback\Decorators
  */
-class CashBackChristmasPromotion implements CashBack
+class ChristmasCashBack implements CashBack
 {
-    const DISCOUNT = 15;
+    private const DISCOUNT = 15;
 
     /**
      * @var CashBack
@@ -31,6 +31,9 @@ class CashBackChristmasPromotion implements CashBack
      */
     public function calculate(float $purchaseAmount): float
     {
-        return self::DISCOUNT * $purchaseAmount / 100;
+        $previous = $this->cashBack->calculate($purchaseAmount);
+        $next = self::DISCOUNT * $purchaseAmount / 100;
+
+        return $previous + $next;
     }
 }
