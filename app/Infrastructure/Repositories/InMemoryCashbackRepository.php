@@ -2,14 +2,14 @@
 
 namespace Lms\Cashback\Infrastructure\Repositories;
 
-use Lms\Cashback\Domain\Repositories\Contracts\CashBackRepository;
+use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 
 /**
  * Class InMemoryCashbackRepository
  *
- * @package Lms\Cashback\Infrastructure\Repositories
+ * @package Lms\Cashback\Infrastructure\Repository
  */
-class InMemoryCashbackRepository implements CashBackRepository
+class InMemoryCashbackRepository implements CashbackRepository
 {
     protected const ACCOUNTS = [
         'edKm5ZhfoO' => [

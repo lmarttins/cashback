@@ -2,16 +2,16 @@
 
 namespace Lms\Cashback\Infrastructure\Repositories;
 
-use Lms\Cashback\Domain\Repositories\Contracts\CashBackRepository;
+use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 
 /**
  * Class EloquentCashbackRepository
  *
- * @package GetLms\Cashback\Infrastructure\Repositories
+ * @package GetLms\Cashback\Infrastructure\Repository
  */
-class EloquentCashbackRepository implements CashBackRepository
+class EloquentCashbackRepository implements CashbackRepository
 {
-    public function find()
+    public function find(string $accountId)
     {
         //
     }

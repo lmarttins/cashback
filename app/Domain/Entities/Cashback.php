@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Domain\Models;
+namespace Lms\Cashback\Domain\Entities;
 
 /**
  * Class Cashback

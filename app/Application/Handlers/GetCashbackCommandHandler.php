@@ -3,7 +3,7 @@
 namespace Lms\Cashback\Application\Handlers;
 
 use Lms\Cashback\Application\Command;
-use Lms\Cashback\Domain\Repositories\Contracts\CashBackRepository;
+use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 
 /**
  * Class GetCashbackCommandHandler
@@ -14,7 +14,7 @@ class GetCashbackCommandHandler
 {
     protected $repository;
 
-    public function __construct(CashBackRepository $repository)
+    public function __construct(CashbackRepository $repository)
     {
         $this->repository = $repository;
     }

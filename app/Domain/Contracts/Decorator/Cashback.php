@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Domain\Decorators\Contracts;
+namespace Lms\Cashback\Domain\Contracts\Decorator;
 
 /**
  * Interface Cashback

@@ -10,20 +10,20 @@ class CashBackDecoratorTest extends TestCase
 {
     public function testCanCalculateCashBackDefault()
     {
-        $cashBack = new DefaultCashback();
+        $cashback = new DefaultCashback();
 
         $purchaseAmount = 2500;
 
-        $this->assertSame(250.0, $cashBack->calculate($purchaseAmount));
+        $this->assertSame(250.0, $cashback->calculate($purchaseAmount));
     }
 
     public function testCanCalculatesDefaultCashBackPlusChristmasCashBack()
     {
-        $cashBack = new DefaultCashback();
-        $cashBack = new ChristmasCashback($cashBack);
+        $cashback = new DefaultCashback();
+        $cashback = new ChristmasCashback($cashback);
 
         $purchaseAmount = 900;
 
-        $this->assertSame(225.0, $cashBack->calculate($purchaseAmount));
+        $this->assertSame(225.0, $cashback->calculate($purchaseAmount));
     }
 }

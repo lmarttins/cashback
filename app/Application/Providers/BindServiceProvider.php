@@ -3,7 +3,7 @@
 namespace Lms\Cashback\Application\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Lms\Cashback\Domain\Repositories\Contracts\CashBackRepository;
+use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 use Lms\Cashback\Infrastructure\Repositories\InMemoryCashbackRepository;
 
 /**
@@ -16,7 +16,7 @@ class BindServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->bind(
-            CashBackRepository::class,
+            CashbackRepository::class,
             InMemoryCashbackRepository::class
         );
     }
