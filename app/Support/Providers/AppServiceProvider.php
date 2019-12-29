@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Core\Providers;
+namespace Lms\Cashback\Support\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

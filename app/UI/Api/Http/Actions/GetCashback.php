@@ -4,7 +4,7 @@ namespace Lms\Cashback\UI\Api\Http\Actions;
 
 use Lms\Cashback\Application\Commands\GetCashbackCommand;
 use Lms\Cashback\Application\Handlers\GetCashbackCommandHandler;
-use Lms\Cashback\Core\Http\Controller\Controller;
+use Lms\Cashback\Support\Http\Controller\Controller;
 
 /**
  * Class GetCashback

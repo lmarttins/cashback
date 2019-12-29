@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Core\Exceptions;
+namespace Lms\Cashback\Support\Exceptions;
 
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;

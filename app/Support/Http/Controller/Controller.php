@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Core\Http\Controller;
+namespace Lms\Cashback\Support\Http\Controller;
 
 use Laravel\Lumen\Routing\Controller as BaseController;
 

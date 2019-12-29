@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Core\Jobs;
+namespace Lms\Cashback\Support\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

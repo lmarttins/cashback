@@ -7,7 +7,7 @@ use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 /**
  * Class InMemoryCashbackRepository
  *
- * @package Lms\Cashback\Infrastructure\Repository
+ * @package Lms\Cashback\Infrastructure\Persistence\Repositories
  */
 class InMemoryCashbackRepository implements CashbackRepository
 {

@@ -7,7 +7,7 @@ use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 /**
  * Class EloquentCashbackRepository
  *
- * @package GetLms\Cashback\Infrastructure\Repository
+ * @package Lms\Cashback\Infrastructure\Persistence\Repositories
  */
 class EloquentCashbackRepository implements CashbackRepository
 {
