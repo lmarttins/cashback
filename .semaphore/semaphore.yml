@@ -16,7 +16,6 @@ blocks:
             - checkout
             - cache restore
             - composer install
-            - composer dump
             - cache store
             - cp .env.example .env
   - name: Run Code Analysis
