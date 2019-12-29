@@ -11,5 +11,5 @@ use JsonSerializable;
  */
 abstract class ValueObject implements JsonSerializable
 {
-    abstract function isEquals($valueObject): bool;
+    abstract public function isEquals($valueObject): bool;
 }
