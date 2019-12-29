@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Infrastructure\Repositories;
+namespace Lms\Cashback\Infrastructure\Persistence\Repositories;
 
 use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
 

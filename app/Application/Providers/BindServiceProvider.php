@@ -4,7 +4,7 @@ namespace Lms\Cashback\Application\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Lms\Cashback\Domain\Contracts\Repository\CashbackRepository;
-use Lms\Cashback\Infrastructure\Repositories\InMemoryCashbackRepository;
+use Lms\Cashback\Infrastructure\Persistence\Repositories\InMemoryCashbackRepository;
 
 /**
  * Class BindServiceProvider
