@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\UI\Api\Http\Routes;
 
-use Lms\Cashback\Support\Http\Router\Route;
+use Lms\Cashback\Framework\Http\Router\Route;
 
 /**
  * Class DomainRoute

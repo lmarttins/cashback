@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\UI\Api\Http\Routes;
 
-use Lms\Cashback\Support\Http\Router\Route;
+use Lms\Cashback\Framework\Http\Router\Route;
 
 /**
  * Class Cashback
@@ -19,7 +19,7 @@ class Cashback extends Route
     protected function routes()
     {
         $this->router->group(['prefix' => 'v1'], function () {
-            $this->router->get('cashback', 'GetCashback');
+            $this->router->post('cashback', 'CreateCashback');
         });
     }
 }

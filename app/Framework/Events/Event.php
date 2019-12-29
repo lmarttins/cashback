@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Support\Events;
+namespace Lms\Cashback\Framework\Events;
 
 use Illuminate\Queue\SerializesModels;
 

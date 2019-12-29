@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Support\Http\Router;
+namespace Lms\Cashback\Framework\Http\Router;
 
 /**
  * Class Route
