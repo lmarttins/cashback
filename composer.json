@@ -20,7 +20,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "Cashback\\": "app/"
+            "Lms\\Cashback\\": "app/"
         }
     },
     "autoload-dev": {

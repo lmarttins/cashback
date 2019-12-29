@@ -38,12 +38,12 @@ $app = new Laravel\Lumen\Application(
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    Cashback\Application\Exceptions\Handler::class
+    Lms\Cashback\Core\Exceptions\Handler::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    Cashback\Application\Console\Kernel::class
+    Lms\Cashback\Core\Console\Kernel::class
 );
 
 /*
@@ -76,6 +76,6 @@ $app->singleton(
 |
 */
 
-$app->register(Cashback\Domains\Cashback\Providers\DomainServiceProvider::class);
+$app->register(Lms\Cashback\Application\Providers\DomainServiceProvider::class);
 
 return $app;
