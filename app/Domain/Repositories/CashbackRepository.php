@@ -9,5 +9,5 @@ namespace Lms\Cashback\Domain\Repositories\Contracts;
  */
 interface CashBackRepository
 {
-   public function find(string $accountId);
+    public function find(string $accountId);
 }

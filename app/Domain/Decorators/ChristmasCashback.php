@@ -16,7 +16,7 @@ class ChristmasCashback implements Cashback
     /**
      * @var Cashback
      */
-    protected  $cashBack;
+    protected $cashBack;
 
     public function __construct(Cashback $cashBack)
     {
