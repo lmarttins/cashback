@@ -77,5 +77,6 @@ $app->singleton(
 */
 
 $app->register(Lms\Cashback\Application\Providers\DomainServiceProvider::class);
+$app->register(Rapide\LaravelQueueKafka\LumenQueueKafkaServiceProvider::class);
 
 return $app;

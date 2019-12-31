@@ -5,11 +5,10 @@ namespace Lms\Cashback\Framework\Jobs;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 
 /**
  * Class Job
- * @package GetLms\Cashback\Application\Jobs
+ * @package Lms\Cashback\Framework\Jobs
  */
 abstract class Job implements ShouldQueue
 {
@@ -24,5 +23,5 @@ abstract class Job implements ShouldQueue
     |
     */
 
-    use InteractsWithQueue, Queueable, SerializesModels;
+    use InteractsWithQueue, Queueable;
 }

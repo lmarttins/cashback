@@ -4,7 +4,7 @@ namespace Lms\Cashback\UI\Api\Http\Actions;
 
 use Illuminate\Http\Request;
 use Lms\Cashback\Application\Commands\CreateCashbackCommand;
-use Lms\Cashback\Application\Handlers\RegisterCashbackCommandHandler;
+use Lms\Cashback\Application\Handlers\CreateCashbackCommandHandler;
 use Lms\Cashback\Framework\Http\Controller\Controller;
 
 /**
@@ -18,7 +18,7 @@ class CreateCashback extends Controller
     {
         $data = $this->dispatchNow(
             new CreateCashbackCommand($request->get('purchase_amount')),
-            app()->make(RegisterCashbackCommandHandler::class)
+            app()->make(CreateCashbackCommandHandler::class)
         );
 
         return response()->json($data, 200);

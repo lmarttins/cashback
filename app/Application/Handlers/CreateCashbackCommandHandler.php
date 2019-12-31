@@ -5,14 +5,15 @@ namespace Lms\Cashback\Application\Handlers;
 use Lms\Cashback\Domain\Contracts\Command;
 use Lms\Cashback\Domain\Decorators\ChristmasCashback;
 use Lms\Cashback\Domain\Decorators\DefaultCashback;
+use Lms\Cashback\Domain\Events\CashbackCreated;
 use Lms\Cashback\Domain\ValueObject\Cashback;
 
 /**
- * Class RegisterCashbackCommandHandler
+ * Class CreateCashbackCommandHandler
  *
  * @package Lms\Cashback\Application\Handlers
  */
-class RegisterCashbackCommandHandler
+class CreateCashbackCommandHandler
 {
     public function handle(Command $command)
     {
@@ -21,6 +22,10 @@ class RegisterCashbackCommandHandler
 
         $discount = $cashback->calculate($command->purchaseAmount);
 
-        return new Cashback($discount, 'money_off');
+        $cashback = new Cashback($discount, 'money_off');
+
+        dispatch(new CashbackCreated($cashback));
+
+        return $cashback;
     }
 }
