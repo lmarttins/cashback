@@ -7,7 +7,7 @@ use TestCase;
 /**
  * Class CreateCashbackTest
  *
- * @package Tests\Integration\UI\Api\Http\Actions
+ * @package Tests\Integration\Interfaces\Api\Http\Actions
  */
 class CreateCashbackTest extends TestCase
 {

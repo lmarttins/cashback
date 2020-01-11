@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\UI\Api\Http\Actions;
+namespace Lms\Cashback\Interfaces\Api\Http\Actions;
 
 use Illuminate\Http\Request;
 use Joselfonseca\LaravelTactician\CommandBusInterface;
@@ -11,7 +11,7 @@ use Lms\Cashback\Framework\Http\Controller\Controller;
 /**
  * Class CreateCashback
  *
- * @package Lms\Cashback\UI\Api\Http\Actions
+ * @package Lms\Cashback\Interfaces\Api\Http\Actions
  */
 class CreateCashback extends Controller
 {

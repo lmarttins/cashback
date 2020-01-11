@@ -38,7 +38,7 @@ blocks:
           # Push a new image to Docker Hub container registry:
           - docker push "${DOCKER_USERNAME}"/cashback:$SEMAPHORE_WORKFLOW_ID
 
-# The deployment pipeline is defined to run on manual approval from the UI.
+# The deployment pipeline is defined to run on manual approval from the Interfaces.
 # Semaphore will the time and the name of the person who promotes each
 # deployment.
 #

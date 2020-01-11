@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\Application\Providers;
 
-use Lms\Cashback\UI\Api\Http\Routes\DomainRoute;
+use Lms\Cashback\Interfaces\Api\Http\Routes\DomainRoute;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -12,7 +12,7 @@ use Illuminate\Support\ServiceProvider;
  */
 class RouteServiceProvider extends ServiceProvider
 {
-    protected $namespace = 'Lms\Cashback\UI\Api\Http\Actions';
+    protected $namespace = 'Lms\Cashback\Interfaces\Api\Http\Actions';
 
     public function register()
     {

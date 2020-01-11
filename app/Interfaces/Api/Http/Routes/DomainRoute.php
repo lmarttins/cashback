@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\UI\Api\Http\Routes;
+namespace Lms\Cashback\Interfaces\Api\Http\Routes;
 
 use Lms\Cashback\Framework\Http\Router\Route;
 
