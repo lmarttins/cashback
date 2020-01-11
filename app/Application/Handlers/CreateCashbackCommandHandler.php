@@ -15,6 +15,12 @@ use Lms\Cashback\Domain\ValueObject\Cashback;
  */
 class CreateCashbackCommandHandler
 {
+    /**
+     * Command handle.
+     *
+     * @param Command $command
+     * @return ChristmasCashback|DefaultCashback|Cashback
+     */
     public function handle(Command $command)
     {
         $cashback = new DefaultCashback();

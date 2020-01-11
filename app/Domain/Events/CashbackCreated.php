@@ -2,9 +2,15 @@
 
 namespace Lms\Cashback\Domain\Events;
 
+use Illuminate\Support\Facades\Log;
 use Lms\Cashback\Domain\ValueObject\Cashback;
 use Lms\Cashback\Framework\Jobs\Job;
 
+/**
+ * Class CashbackCreated
+ *
+ * @package Lms\Cashback\Domain\Events
+ */
 class CashbackCreated extends Job
 {
     protected $cashback;
@@ -18,5 +24,15 @@ class CashbackCreated extends Job
     public function __construct(Cashback $cashback)
     {
         $this->cashback = $cashback;
+    }
+
+    /**
+     * Event handle.
+     *
+     * @return void
+     */
+    public function handle()
+    {
+        Log::info('[Event::CashbackCreated]: ', [$this->cashback]);
     }
 }

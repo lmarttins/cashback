@@ -16,6 +16,11 @@ class CreateCashbackCommand implements Command
      */
     public $purchaseAmount;
 
+    /**
+     * CreateCashbackCommand constructor.
+     *
+     * @param float $purchaseAmount
+     */
     public function __construct(float $purchaseAmount)
     {
         $this->purchaseAmount = $purchaseAmount;

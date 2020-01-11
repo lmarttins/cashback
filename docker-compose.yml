@@ -1,33 +1,14 @@
-# cashback
-
-
 # compose syntax version.
 version: "3.6"
 
 # services declaration.
 services:
-  # Redis
-  redis:
-    image: redis:5-alpine
-    volumes:
-      - redis-data:/data
-    ports:
-      - target: 6379
-        published: 6379
-  # MongoDB
-  mongo:
-    image: mongo:4.1
-    volumes:
-      - mongo-data:/data/db
-    environment:
-      - MONGO_INITDB_ROOT_USERNAME=cashback
-      - MONGO_INITDB_ROOT_PASSWORD=cashback
-    ports:
-      - target: 27017
-        published: 27017
   # Web Application
-  web:
-    build: .
+  api:
+    build:
+      dockerfile: Dockerfile-php-nginx
+      context: ./docker
+    container_name: cashback-api
     volumes:
       - .:/var/www/app
       - dot-config:/home/ambientum/.config
@@ -44,13 +25,12 @@ services:
         published: 8080
       - target: 8083
         published: 8083
-    links:
-      - redis
-      - mongo
-      - mailhog
   # Laravel Queue Worker
   queue:
-    image: ambientum/php:7.3
+    build:
+      dockerfile: Dockerfile-php
+      context: ./docker
+    container_name: cashback-worker
     volumes:
       - .:/var/www/app
       - dot-config:/home/ambientum/.config
@@ -66,18 +46,26 @@ services:
       - XDEBUG_ENABLED=false
       - OPCACHE_MODE=disabled
       - PHP_MEMORY_LIMIT=256M
-    links:
-      - redis
-      - mongo
-      - mailhog
-  # MailHog
-  mailhog:
-    image: mailhog/mailhog:latest
+  # Zookeeper
+  zookeeper:
+    image: confluentinc/cp-zookeeper:latest
+    container_name: cashback-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+  # Kafka
+  kafka:
+    image: confluentinc/cp-kafka:latest
+    container_name: cashback-kafka
+    depends_on:
+      - zookeeper
     ports:
-      - target: 1025
-        published: 1025
-      - target: 8025
-        published: 8025
+      - 9092:9092
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
 
 # volumes declaration.
 volumes:

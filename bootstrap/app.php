@@ -21,7 +21,9 @@ $app = new Laravel\Lumen\Application(
     dirname(__DIR__)
 );
 
-// $app->withFacades();
+$app->configure('laravel-tactician');
+
+$app->withFacades();
 
 // $app->withEloquent();
 
@@ -78,5 +80,6 @@ $app->singleton(
 
 $app->register(Lms\Cashback\Application\Providers\DomainServiceProvider::class);
 $app->register(Rapide\LaravelQueueKafka\LumenQueueKafkaServiceProvider::class);
+$app->register(Joselfonseca\LaravelTactician\Providers\LaravelTacticianServiceProvider::class);
 
 return $app;

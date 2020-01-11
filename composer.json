@@ -12,7 +12,9 @@
     ],
     "require": {
         "php": "^7.2",
+        "joselfonseca/laravel-tactician": "^1.0",
         "laravel/lumen-framework": "^6.0",
+        "laravelista/lumen-vendor-publish": "^6.0",
         "lmarttins/laravel-queue-kafka": "dev-master"
     },
     "require-dev": {
@@ -28,7 +30,10 @@
         ],
         "psr-4": {
             "Lms\\Cashback\\": "app/"
-        }
+        },
+        "files": [
+            "app/Framework/helpers.php"
+        ]
     },
     "autoload-dev": {
         "classmap": [
