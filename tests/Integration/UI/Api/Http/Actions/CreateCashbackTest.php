@@ -13,7 +13,7 @@ class CreateCashbackTest extends TestCase
 {
     public function testShouldResponseSuccess()
     {
-        $response = $this->call('POST', '/api/v1/cashback', ['purchase_amount' => 1000]);
+        $response = $this->call('POST', '/api/v1/cashback', ['purchase_amount' => 100]);
 
         $this->assertEquals(200, $response->status());
     }

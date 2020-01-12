@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\Application\Handlers;
 
-use Lms\Cashback\Domain\Contracts\Command;
+use Lms\Cashback\Domain\Command;
 use Lms\Cashback\Domain\Decorators\ChristmasCashback;
 use Lms\Cashback\Domain\Decorators\DefaultCashback;
 use Lms\Cashback\Domain\Events\CashbackCreated;
@@ -26,7 +26,7 @@ class CreateCashbackCommandHandler
         $cashback = new DefaultCashback();
         $cashback = new ChristmasCashback($cashback);
 
-        $discount = $cashback->calculate($command->purchaseAmount);
+        $discount = $cashback->calculate($command->purchase_amount);
 
         $cashback = new Cashback($discount, 'money_off');
 

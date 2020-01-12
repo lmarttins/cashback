@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\Domain\Decorators;
 
-use Lms\Cashback\Domain\Contracts\Decorator\Cashback;
+use Lms\Cashback\Domain\Decorators\Contracts\Cashback;
 
 /**
  * Class ChristmasCashback

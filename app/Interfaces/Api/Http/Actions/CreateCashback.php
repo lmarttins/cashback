@@ -3,9 +3,8 @@
 namespace Lms\Cashback\Interfaces\Api\Http\Actions;
 
 use Illuminate\Http\Request;
-use Joselfonseca\LaravelTactician\CommandBusInterface;
-use Lms\Cashback\Application\Commands\CreateCashbackCommand;
-use Lms\Cashback\Application\Handlers\CreateCashbackCommandHandler;
+use Lms\Cashback\Application\Exceptions\CommandValidationException;
+use Lms\Cashback\Domain\Services\CreateCashbackService;
 use Lms\Cashback\Framework\Http\Controller\Controller;
 
 /**
@@ -16,36 +15,20 @@ use Lms\Cashback\Framework\Http\Controller\Controller;
 class CreateCashback extends Controller
 {
     /**
-     * @var CommandBusInterface
-     */
-    protected $commandBus;
-
-    /**
-     * CreateCashback constructor.
-     *
-     * @param CommandBusInterface $commandBus
-     */
-    public function __construct(CommandBusInterface $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
-
-    /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function __invoke(Request $request)
-    {
-        $this->commandBus->addHandler(
-            CreateCashbackCommand::class,
-            CreateCashbackCommandHandler::class
-        );
+    public function __invoke(
+        Request $request,
+        CreateCashbackService $service
+    ) {
+        try {
+            $response = $service->create($request->all());
 
-        $response = $this->commandBus->dispatch(
-            CreateCashbackCommand::class,
-            ['purchaseAmount' => $request->get('purchase_amount')]
-        );
+            return response()->json($response, 200);
 
-        return response()->json($response, 200);
+        } catch (CommandValidationException $e) {
+            return response()->json(['message' => $e->getMessage()], 400);
+        }
     }
 }

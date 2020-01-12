@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Domain\Contracts\Repository;
+namespace Lms\Cashback\Domain\Repositories;
 
 /**
  * Interface CashbackRepository

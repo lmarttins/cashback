@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Domain\Contracts;
+namespace Lms\Cashback\Domain;
 
 /**
  * Interface Command
