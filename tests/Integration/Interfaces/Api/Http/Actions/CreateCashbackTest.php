@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Integration\UI\Api\Http\Actions;
+namespace Tests\Integration\Interfaces\Api\Http\Actions;
 
 use TestCase;
 
@@ -16,5 +16,12 @@ class CreateCashbackTest extends TestCase
         $response = $this->call('POST', '/api/v1/cashback', ['purchase_amount' => 100]);
 
         $this->assertEquals(200, $response->status());
+    }
+
+    public function testShouldResponseWithError()
+    {
+        $response = $this->call('POST', '/api/v1/cashback', ['purchase_amount' => 1000]);
+
+        $this->assertEquals(400, $response->status());
     }
 }
