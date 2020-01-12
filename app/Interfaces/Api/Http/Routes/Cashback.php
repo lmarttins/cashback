@@ -2,7 +2,7 @@
 
 namespace Lms\Cashback\Interfaces\Api\Http\Routes;
 
-use Lms\Cashback\Framework\Http\Router\Route;
+use Lms\Cashback\Support\Http\Router\Route;
 
 /**
  * Class Cashback

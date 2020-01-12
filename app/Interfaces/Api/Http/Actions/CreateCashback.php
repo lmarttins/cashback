@@ -5,7 +5,7 @@ namespace Lms\Cashback\Interfaces\Api\Http\Actions;
 use Illuminate\Http\Request;
 use Lms\Cashback\Application\Exceptions\CommandValidationException;
 use Lms\Cashback\Domain\Services\CreateCashbackService;
-use Lms\Cashback\Framework\Http\Controller\Controller;
+use Lms\Cashback\Support\Http\Controller\Controller;
 
 /**
  * Class CreateCashback

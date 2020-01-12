@@ -4,7 +4,7 @@ namespace Lms\Cashback\Domain\Events;
 
 use Illuminate\Support\Facades\Log;
 use Lms\Cashback\Domain\ValueObject\Cashback;
-use Lms\Cashback\Framework\Jobs\Job;
+use Lms\Cashback\Support\Jobs\Job;
 
 /**
  * Class CashbackCreated

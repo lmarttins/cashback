@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Framework\Jobs;
+namespace Lms\Cashback\Support\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -8,7 +8,7 @@ use Illuminate\Queue\InteractsWithQueue;
 
 /**
  * Class Job
- * @package Lms\Cashback\Framework\Jobs
+ * @package Lms\Cashback\Support\Jobs
  */
 abstract class Job implements ShouldQueue
 {

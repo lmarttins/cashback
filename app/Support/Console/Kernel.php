@@ -1,6 +1,6 @@
 <?php
 
-namespace Lms\Cashback\Framework\Console;
+namespace Lms\Cashback\Support\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
