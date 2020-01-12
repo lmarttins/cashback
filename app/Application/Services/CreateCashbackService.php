@@ -30,7 +30,7 @@ class CreateCashbackService implements CreateCashbackServiceContract
     }
 
     /**
-     * Create cachback.
+     * Create cashback.
      *
      * @param array $input
      * @return mixed

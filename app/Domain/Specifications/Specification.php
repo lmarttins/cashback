@@ -2,8 +2,6 @@
 
 namespace Lms\Cashback\Domain\Specifications;
 
-use Lms\Cashback\Domain\ValueObject\Item;
-
 /**
  * Interface Specification
  *
@@ -11,5 +9,9 @@ use Lms\Cashback\Domain\ValueObject\Item;
  */
 interface Specification
 {
+    /**
+     * @param float $amount
+     * @return mixed
+     */
     public function isSatisfiedBy(float $amount);
 }

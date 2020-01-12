@@ -2,8 +2,6 @@
 
 namespace Lms\Cashback\Domain\Specifications;
 
-use Lms\Cashback\Domain\ValueObject\Item;
-
 /**
  * Class PurchaseAmountSpecification
  *
@@ -34,7 +32,7 @@ class PurchaseAmountSpecification implements Specification
     }
 
     /**
-     * @param Item $item
+     * @param float $amount
      * @return bool
      */
     public function isSatisfiedBy(float $amount): bool

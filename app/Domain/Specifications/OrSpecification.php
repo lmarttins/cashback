@@ -2,8 +2,6 @@
 
 namespace Lms\Cashback\Domain\Specifications;
 
-use Lms\Cashback\Domain\ValueObject\Item;
-
 /**
  * Class OrSpecification
  *
