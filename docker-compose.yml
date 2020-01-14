@@ -20,11 +20,11 @@ services:
       - XDEBUG_ENABLED=true
       - OPCACHE_MODE=normal
       - PHP_MEMORY_LIMIT=256M
+    expose:
+      - "8080"
+      - "80"
     ports:
-      - target: 8080
-        published: 8080
-      - target: 8083
-        published: 8083
+      - "8081:8080"
   # Laravel Queue Worker
   queue:
     build:
