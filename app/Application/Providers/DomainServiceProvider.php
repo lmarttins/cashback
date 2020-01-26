@@ -19,5 +19,6 @@ class DomainServiceProvider extends ServiceProvider
     {
         $this->app->register(BindServiceProvider::class);
         $this->app->register(RouteServiceProvider::class);
+        $this->app->register(BusServiceProvider::class);
     }
 }

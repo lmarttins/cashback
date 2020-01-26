@@ -2,10 +2,7 @@
 
 namespace Lms\Cashback\Application\Services;
 
-use Joselfonseca\LaravelTactician\CommandBusInterface;
 use Lms\Cashback\Application\Commands\CreateCashbackCommand;
-use Lms\Cashback\Application\Handlers\CreateCashbackCommandHandler;
-use Lms\Cashback\Application\Validators\CreateCashbackValidator;
 use Lms\Cashback\Domain\Services\CreateCashbackService as CreateCashbackServiceContract;
 
 /**
@@ -15,20 +12,6 @@ use Lms\Cashback\Domain\Services\CreateCashbackService as CreateCashbackServiceC
  */
 class CreateCashbackService implements CreateCashbackServiceContract
 {
-    protected $middleware = [
-        CreateCashbackValidator::class
-    ];
-
-    /**
-     * CreateCashback constructor.
-     *
-     * @param CommandBusInterface $commandBus
-     */
-    public function __construct(CommandBusInterface $commandBus)
-    {
-        $this->commandBus = $commandBus;
-    }
-
     /**
      * Create cashback.
      *
@@ -37,15 +20,8 @@ class CreateCashbackService implements CreateCashbackServiceContract
      */
     public function create(array $input)
     {
-        $this->commandBus->addHandler(
-            CreateCashbackCommand::class,
-            CreateCashbackCommandHandler::class
-        );
-
-        return $this->commandBus->dispatch(
-            CreateCashbackCommand::class,
-            $input,
-            $this->middleware
+        return dispatch_now(
+            new CreateCashbackCommand($input['purchase_amount'])
         );
     }
 }
