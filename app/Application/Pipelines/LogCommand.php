@@ -1,14 +1,14 @@
 <?php
 
-namespace Lms\Cashback\Application\Commands;
+namespace Lms\Cashback\Application\Pipelines;
 
 use Closure;
 use Psr\Log\LoggerInterface;
 
 /**
  * Class LogCommand
- * 
- * @package Lms\Cashback\Application\Commands
+ *
+ * @package Lms\Cashback\Application\Pipelines
  */
 class LogCommand
 {
